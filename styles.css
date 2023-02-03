@@ -5,9 +5,20 @@ body {
 
 }
 
+#convert-btn{
+    position: absolute;
+    width: 117px;
+    height: 42px;
+    left: 217px;
+    top: 209px;
+    background: #FFFFFF;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+}
+
 #container {
-    width: 550px;
-    height: 729px;
+    min-width: 550px;
+    min-height: 729px;
     background: #1F2937;
 }
 

@@ -5,11 +5,14 @@
 */
 
 const inputEl = document.getElementById("input-el")
-
 const converBtn = document.getElementById("convert-btn")
-
+const lengthEl = document.getElementById("length-output")
+const volumeEL = document.getElementById("volume-output")
+const massEl = document.getElementById("mass-output")
 converBtn.addEventListener("click", function() {
     const inputValue = inputEl.value
+    
+    lengthEl.textContent = `${inputValue} meters = ${converToFeet(inputValue)}feet`
     console.log(inputValue)
     console.log(
         converToFeet(inputValue),
