@@ -9,20 +9,52 @@ const converBtn = document.getElementById("convert-btn")
 const lengthEl = document.getElementById("length-output")
 const volumeEL = document.getElementById("volume-output")
 const massEl = document.getElementById("mass-output")
+
+console.log("start value : " + inputEl.value)
+
 converBtn.addEventListener("click", function() {
+    run()
+    console.log("button value : " + inputEl.value)
+})
+
+document.addEventListener("keydown", function(event){
+    if(event.key === "Enter"){
+        
+        run()
+        console.log("enter value : " + inputEl.value)
+        // if (inputValue != null) {
+        //     run()
+        // }
+        
+    }
+})
+
+function getOutput() {
     const inputValue = inputEl.value
     
-    lengthEl.textContent = `${inputValue} meters = ${converToFeet(inputValue)}feet`
-    console.log(inputValue)
-    console.log(
-        converToFeet(inputValue),
-        convertToMeter(inputValue),
-        convertToGallon(inputValue),
-        convertToLiter(inputValue),
-        convertToPound(inputValue),
-        convertToKg(inputValue)
-    )
-})
+    lengthEl.textContent = `${inputValue} meters = ${converToFeet(inputValue)} feet | 
+    ${inputValue} feet = ${convertToMeter(inputValue)} meters`
+    
+    volumeEL.textContent = `${inputValue} liters = ${convertToGallon(inputValue)} gallons | 
+    ${inputValue} gallons = ${convertToLiter(inputValue)} liters`
+
+    massEl.textContent = `${inputValue} kilos = ${convertToPound(inputValue)} pounds | 
+    ${inputValue} pounds = ${convertToKg(inputValue)} kilos`
+} 
+
+function makeEmpty() {
+    lengthEl.textContent = ""
+ 
+}
+
+function run() {
+    const inputValue = inputEl.value
+    if (inputValue == 0){
+        makeEmpty()    
+    } else {
+        getOutput()    
+    } 
+}
 
 function converToFeet(value) {
     feetValue = value * 3.281
