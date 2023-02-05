@@ -44,6 +44,8 @@ function getOutput() {
 
 function makeEmpty() {
     lengthEl.textContent = ""
+    volumeEL.textContent = ""
+    massEl.textContent = ""
  
 }
 
