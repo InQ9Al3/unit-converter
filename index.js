@@ -21,16 +21,13 @@ document.addEventListener("keydown", function (event) {
   if (event.key === "Enter") {
     run()
     console.log("enter value : " + inputEl.value)
-    // if (inputValue != null) {
-    //     run()
-    // }
   }
 })
 
-function getOutput() {
+const getOutput = () => {
   const inputValue = inputEl.value
 
-  lengthEl.textContent = `${inputValue} meters = ${converToFeet(
+  lengthEl.textContent = `${inputValue} meters = ${convertToFeet(
     inputValue
   )} feet | 
     ${inputValue} feet = ${convertToMeter(inputValue)} meters`
@@ -52,7 +49,7 @@ function makeEmpty() {
   massEl.textContent = ""
 }
 
-function run() {
+const run = () => {
   const inputValue = inputEl.value
   if (inputValue == 0) {
     makeEmpty()
@@ -61,32 +58,9 @@ function run() {
   }
 }
 
-function converToFeet(value) {
-  feetValue = value * 3.281
-  return feetValue.toFixed(3)
-}
-
-function convertToMeter(value) {
-  meterValue = value / 3.281
-  return meterValue.toFixed(3)
-}
-
-function convertToGallon(value) {
-  gallonValue = value * 0.264
-  return gallonValue.toFixed(3)
-}
-
-function convertToLiter(value) {
-  literValue = value / 0.264
-  return literValue.toFixed(3)
-}
-
-function convertToPound(value) {
-  poundValue = value * 2.204
-  return poundValue.toFixed(3)
-}
-
-function convertToKg(value) {
-  kgValue = value / 2.204
-  return kgValue.toFixed(3)
-}
+const convertToFeet = (value) => (value * 3.281).toFixed(3)
+const convertToMeter = (value) => (value / 3.281).toFixed(3)
+const convertToGallon = (value) => (value * 0.264).toFixed(3)
+const convertToLiter = (value) => (value / 0.264).toFixed(3)
+const convertToPound = (value) => (value * 2.204).toFixed(3)
+const convertToKg = (value) => (value / 2.204).toFixed(3)
