@@ -2,8 +2,8 @@ body {
   margin: 0;
   padding: 0;
   min-width: 550px;
-  min-height: 729px;
   font-family: sans-serif;
+  min-height: 729px;
 }
 
 #convert-btn {
